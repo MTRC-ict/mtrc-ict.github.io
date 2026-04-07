@@ -99,35 +99,156 @@ https://mtrc-ict.github.io
 
 - [assets/people](assets/people)
 
-### 成员页面最少需要维护哪些字段
+### 成员页面字段说明
 
-以 `index.zh.md` 为例，建议至少保证以下 front matter 正确：
+以 `index.zh.md` 为例，一个常见成员页至少应包含：
 
 ```yaml
 ---
 layout: person_profile
-name: 姓名
-image: /assets/people/your-photo.jpg
-role: 博士研究生
-email: your_email@example.com
-alumni: false
-date: 2023-09-01
-permalink: people/your-slug
+name: [姓名中文]
+image: /assets/people/[your-photo.jpg]
+role: [硕士研究生]
+blog: [https://example.com]
+email: [your_email@example.com]
+github: https://github.com/[yourname]
+alumni: [false]
+advisors:
+  - [导师姓名中文]
+date: [2023-09-01]
+permalink: people/[姓名拼音]
 lang: zh
 ---
 ```
 
+### 这些字段必须人工改写
+
+下面这些字段不能直接复制模板，新增成员时必须逐项检查并改成真实值：
+
+- `name`：成员姓名
+- `image`：头像路径，必须指向 `assets/people/` 下真实存在的图片
+- `blog`：个人主页；没有可删除，不要保留占位链接
+- `email`：真实邮箱
+- `github`：GitHub 主页；没有可删除，不要保留占位链接
+- `advisors`：导师列表；没有可删除
+- `date`：入组/入学年份对应日期，当前团队页按年份分组时会使用这个字段
+- `permalink`：成员页面固定地址，通常写成 `people/<slug>`，其中 `<slug>` 应与目录名一致
+- 正文 Markdown：个人简介、研究方向、项目经历、主要论著等内容都需要人工整理
+
+### 这些字段是受限字段，只能用固定选项
+
+#### `layout`
+
+成员页统一使用：
+
+- `person_profile`
+
+#### `lang`
+
+只能是：
+
+- `zh`
+- `en`
+
+#### `alumni`
+
+只能是：
+
+- `false`：在读/在岗
+- `true`：已毕业
+
+#### 中文页面 `role` 可选项
+
+员工：
+
+- `研究员（正高级工程师）`
+- `研究人员`
+- `工程师`
+- `博士后`
+
+学生：
+
+- `博士研究生`
+- `硕士研究生`
+
 说明：
 
-- `role` 用于页面分组和团队页展示，必须与当前站点使用的分类一致
-- `date` 对学生页用于按年份归类
-- `alumni: true` 时，毕业生页面会出现在“已毕业”栏目
-- `permalink` 不要随意修改；如果修改，原链接会失效
-- `image` 应指向 `assets/people/` 中的头像文件
+- 已毕业成员的 `role` 仍然保持其毕业前身份，一般仍写 `博士研究生` 或 `硕士研究生`
+- “已毕业”不是 `role` 的一个取值，而是通过 `alumni: true` 控制
+
+#### 英文页面 `role` 可选项
+
+员工：
+
+- `Professor`
+- `Researcher`
+- `Engineer`
+- `Postdoc`
+
+学生：
+
+- `PhD Student`
+- `Masters Student`
+
+### 不同成员类型应如何填写
+
+#### 员工
+
+目录结构：
+
+- `_people/员工/<role>/<slug>/`
+
+要求：
+
+- `role` 必须与所在目录中的 `<role>` 一致
+- `alumni` 固定为 `false`
+- 一般不需要 `alumni_since`
+
+#### 在读学生
+
+目录结构：
+
+- `_people/学生/<role>/<年份>/<slug>/`
+
+要求：
+
+- `role` 只能是 `博士研究生` / `硕士研究生`，英文页对应 `PhD Student` / `Masters Student`
+- `alumni` 固定为 `false`
+- `date` 应落在对应年份内，例如目录是 `2023`，则 `date` 应为 `2023-xx-xx`
+
+#### 已毕业学生
+
+目录结构：
+
+- `_people/学生/已毕业/<毕业年份>/<slug>/`
+
+要求：
+
+- `alumni` 必须为 `true`
+- 必须补充 `alumni_since: <毕业年份>`
+- `role` 仍保持原身份，不要写成“已毕业”
+
+示例：
+
+```yaml
+alumni: true
+alumni_since: 2023
+role: 硕士研究生
+```
+
+### 不要保留模板占位值
+
+提交前请特别检查并删除下面这些占位内容：
+
+- `example@example.com`
+- `https://www.baidu.com`
+- “没有，我一句都不想说”
+- 空的 `advisors`
+- 不存在的头像路径
 
 ### 更新个人简介与研究方向
 
-front matter 下方的 Markdown 正文就是成员页内容。常见可更新内容包括：
+front matter 下方的 Markdown 正文就是成员页内容。常见需要人工改写的部分包括：
 
 - 个人简介
 - 研究方向
