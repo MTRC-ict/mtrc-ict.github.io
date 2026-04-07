@@ -758,7 +758,27 @@ a:hover {
 }
 
 .site-footer {
-  padding: 28px 0 48px;
+  position: relative;
+  margin-top: 36px;
+  padding: 30px 0 42px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #d8ebff 0%, #bddcff 100%);
+  border-top: 1px solid rgba(17, 69, 135, 0.08);
+}
+
+.site-footer::after {
+  content: "";
+  position: absolute;
+  left: max(18px, calc((100vw - min(1120px, 92vw)) / 2 - 24px));
+  top: 0;
+  bottom: 0;
+  width: min(760px, 56vw);
+  pointer-events: none;
+  opacity: 1;
+  background-image: url("assets/ict.png");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: left center;
 }
 
 .site-footer a {
@@ -770,11 +790,16 @@ a:hover {
 }
 
 .footer-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(17, 69, 135, 0.08);
+  align-items: flex-start;
+}
+
+.footer-branding strong {
+  color: var(--text-heading);
 }
 
 .footer-inner p {
@@ -888,6 +913,15 @@ a:hover {
 
   .brand-copy small {
     display: none;
+  }
+
+  .site-footer {
+    padding-bottom: 34px;
+  }
+
+  .site-footer::after {
+    left: -24px;
+    width: min(420px, 78vw);
   }
 }
 
