@@ -1,17 +1,17 @@
 ---
 layout: person_profile
-name: 王鑫
-image: /assets/people/wangxin.jpg
+name: 程轶涵
+image: /assets/people/chengyihan.jpg
 role: 硕士研究生
 blog: https://www.baidu.com
 email: example@example.com
 github: https://www.baidu.com
 alumni: true
-alumni_since: 2023
+alumni_since: 2025
 advisors:
-    - 张福新
-date: 2020-09-01
-permalink: people/wangxin
+    - 肖俊华
+date: 2021-09-01
+permalink: people/chengyihan
 lang: zh
 ---
 

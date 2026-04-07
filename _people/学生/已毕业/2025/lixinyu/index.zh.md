@@ -1,17 +1,17 @@
 ---
 layout: person_profile
-name: 王鑫
-image: /assets/people/wangxin.jpg
-role: 硕士研究生
+name: 李欣宇
+image: /assets/people/lixinyu.jpg
+role: 博士研究生
 blog: https://www.baidu.com
 email: example@example.com
 github: https://www.baidu.com
 alumni: true
-alumni_since: 2023
+alumni_since: 2025
 advisors:
     - 张福新
-date: 2020-09-01
-permalink: people/wangxin
+date: 2019-09-01
+permalink: people/lixinyu
 lang: zh
 ---
 

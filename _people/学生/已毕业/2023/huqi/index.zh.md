@@ -10,7 +10,7 @@ alumni: true
 alumni_since: 2023
 advisors:
     - 张福新
-date: 2023-06-29
+date: 2020-09-01
 permalink: people/huqi
 lang: zh
 ---

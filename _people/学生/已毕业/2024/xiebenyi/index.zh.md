@@ -1,17 +1,17 @@
 ---
 layout: person_profile
-name: 王鑫
-image: /assets/people/wangxin.jpg
-role: 硕士研究生
+name: 谢本壹
+image: /assets/people/xiebenyi.jpg
+role: 博士研究生
 blog: https://www.baidu.com
 email: example@example.com
 github: https://www.baidu.com
 alumni: true
-alumni_since: 2023
+alumni_since: 2024
 advisors:
     - 张福新
-date: 2020-09-01
-permalink: people/wangxin
+date: 2023-06-26
+permalink: people/xiebenyi
 lang: zh
 ---
 

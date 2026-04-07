@@ -87,8 +87,13 @@ https://mtrc-ict.github.io
 
 例如：
 
-- [zhangfuxin](_people/员工/研究员（正高级工程师）/zhangfuxin/index.zh.md)
+- [zhangfuxin](_people/员工/研究员／正高级工程师/zhangfuxin/index.zh.md)
 - [haomiao](_people/学生/硕士研究生/2023/haomiao/index.zh.md)
+
+说明：
+
+- 员工目录中的“或”关系使用全角斜杠 `／` 作为目录名的一部分，例如 `研究员／正高级工程师`
+- 成员页 front matter 中的 `role` 仍然使用半角斜杠 `/`，例如 `研究员/正高级工程师`
 
 每个成员目录通常至少包含：
 
@@ -161,8 +166,8 @@ lang: zh
 
 员工：
 
-- `研究员（正高级工程师）`
-- `研究人员`
+- `研究员/正高级工程师`
+- `副研究员/高级工程师`
 - `工程师`
 - `博士后`
 
@@ -180,8 +185,8 @@ lang: zh
 
 员工：
 
-- `Professor`
-- `Researcher`
+- `Professor / Senior Engineer`
+- `Associate Researcher / Senior Engineer`
 - `Engineer`
 - `Postdoc`
 
@@ -200,7 +205,7 @@ lang: zh
 
 要求：
 
-- `role` 必须与所在目录中的 `<role>` 一致
+- `role` 必须与目录语义一致；如果目录名中使用了全角斜杠 `／`，则 `role` 中对应使用半角斜杠 `/`
 - `alumni` 固定为 `false`
 - 一般不需要 `alumni_since`
 
