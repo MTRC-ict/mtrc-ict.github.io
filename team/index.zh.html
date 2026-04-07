@@ -7,53 +7,97 @@ eyebrow: People
 intro: 团队成员按角色分类展示，点击姓名可进入个人页面。
 permalink: /team/
 description: MTRC 团队成员页面。
-roles:
-  - 研究员（正高级工程师）
-  - 博士研究生
-  - 硕士研究生
-  - 员工
-  - 博士后
+employee_roles:
+  - title: 研究员（正高级工程师）
+    source_title: 研究员（正高级工程师）
+  - title: 研究人员
+    source_title: 研究人员
+  - title: 工程师
+    source_title: 工程师
+  - title: 博士后
+    source_title: 博士后
+student_roles:
+  - title: 博士研究生
+    alumni: false
+    year_label: 级
+  - title: 硕士研究生
+    alumni: false
+    year_label: 级
+  - title: 已毕业
+    alumni: true
+    year_label: 届
 ---
 
 {% assign zh_people = site.people | where: "lang", "zh" %}
 
-<div class="team-grid">
-  {% for role in page.roles %}
-    {% assign members = zh_people | where: "role", role | where: "alumni", false %}
-    {% if members.size > 0 %}
-      <article class="card team-card{% if members.size < 3 %} compact{% endif %}">
-        <h3>{{ role }}</h3>
-        <div class="member-grid">
-          {% for person in members %}
-            <a class="member-link" href="{{ person.url | relative_url }}">
-              {% if person.image %}
-                <img class="member-avatar" src="{{ person.image | relative_url }}" alt="{{ person.name }} 的头像" />
-              {% else %}
-                <span class="member-avatar member-avatar-fallback">{{ person.name | slice: 0, 1 }}</span>
-              {% endif %}
-              <span class="member-name">{{ person.name }}</span>
-            </a>
-          {% endfor %}
-        </div>
-      </article>
-    {% endif %}
-  {% endfor %}
-
-  <article class="card team-card">
-    <h3>毕业生</h3>
-    <div class="member-grid">
-      {% assign alumni = zh_people | where: "alumni", true | sort: "alumni_since" | reverse %}
-      {% for person in alumni %}
-        <a class="member-link" href="{{ person.url | relative_url }}">
-          {% if person.image %}
-            <img class="member-avatar" src="{{ person.image | relative_url }}" alt="{{ person.name }} 的头像" />
-          {% else %}
-            <span class="member-avatar member-avatar-fallback">{{ person.name | slice: 0, 1 }}</span>
-          {% endif %}
-          <span class="member-name">{{ person.name }}</span>
-          <span class="member-meta">{{ person.alumni_since }}</span>
-        </a>
+<div class="content-stack">
+  <section class="team-section">
+    <div class="section-subheading">
+      <h3>员工</h3>
+    </div>
+    <div class="team-grid">
+      {% for role in page.employee_roles %}
+        {% assign members = zh_people | where: "role", role.source_title | where: "alumni", false %}
+        {% if members.size > 0 %}
+          <article class="card team-card{% if members.size < 3 %} compact{% endif %}">
+            <h3>{{ role.title }}</h3>
+            <div class="member-grid">
+              {% for person in members %}
+                <a class="member-link" href="{{ person.url | relative_url }}">
+                  {% if person.image %}
+                    <img class="member-avatar" src="{{ person.image | relative_url }}" alt="{{ person.name }} 的头像" />
+                  {% else %}
+                    <span class="member-avatar member-avatar-fallback">{{ person.name | slice: 0, 1 }}</span>
+                  {% endif %}
+                  <span class="member-name">{{ person.name }}</span>
+                </a>
+              {% endfor %}
+            </div>
+          </article>
+        {% endif %}
       {% endfor %}
     </div>
-  </article>
+  </section>
+
+  <section class="team-section">
+    <div class="section-subheading">
+      <h3>学生</h3>
+    </div>
+    <div class="team-grid">
+      {% for role in page.student_roles %}
+        {% if role.alumni %}
+          {% assign members = zh_people | where: "alumni", true %}
+        {% else %}
+          {% assign members = zh_people | where: "role", role.title | where: "alumni", false %}
+        {% endif %}
+        {% if members.size > 0 %}
+          <article class="card team-card{% if members.size < 3 %} compact{% endif %}">
+            <h3>{{ role.title }}（{{ members.size }}）</h3>
+            {% if role.alumni %}
+              {% assign members_by_year = members | sort: "alumni_since" | reverse | group_by: "alumni_since" %}
+            {% else %}
+              {% assign members_by_year = members | sort: "date" | reverse | group_by_exp: "person", "person.date | date: '%Y'" %}
+            {% endif %}
+            {% for year_group in members_by_year %}
+              <div class="member-group">
+                <h4 class="member-group-title">{{ year_group.name }}{{ role.year_label }}</h4>
+                <div class="member-grid">
+                  {% for person in year_group.items %}
+                    <a class="member-link" href="{{ person.url | relative_url }}">
+                      {% if person.image %}
+                        <img class="member-avatar" src="{{ person.image | relative_url }}" alt="{{ person.name }} 的头像" />
+                      {% else %}
+                        <span class="member-avatar member-avatar-fallback">{{ person.name | slice: 0, 1 }}</span>
+                      {% endif %}
+                      <span class="member-name">{{ person.name }}</span>
+                    </a>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endfor %}
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
 </div>

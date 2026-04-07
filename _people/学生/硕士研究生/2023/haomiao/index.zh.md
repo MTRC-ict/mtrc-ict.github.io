@@ -1,7 +1,7 @@
 ---
 layout: person_profile
-name: 未命名
-image: /assets/people/temp1.jpg
+name: 郝淼
+image: /assets/people/haomiao.jpg
 role: 硕士研究生
 blog: https://www.baidu.com
 email: example@example.com
@@ -10,7 +10,7 @@ alumni: false
 advisors:
     - 张福新
 date: 2023-06-26
-permalink: people/temp1
+permalink: people/haomiao
 lang: zh
 ---
 

@@ -2,7 +2,7 @@
 layout: person_profile
 name: 王宇吉
 image: /assets/people/wangyuji.jpg
-role: 员工
+role: 工程师
 blog: https://www.baidu.com
 email: example@example.com
 github: https://www.baidu.com

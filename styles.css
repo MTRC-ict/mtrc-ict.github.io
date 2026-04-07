@@ -582,6 +582,22 @@ a:hover {
   gap: 14px;
 }
 
+.team-section + .team-section {
+  margin-top: 6px;
+}
+
+.member-group + .member-group {
+  margin-top: 18px;
+}
+
+.member-group-title {
+  margin: 0 0 12px;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
 .member-link {
   display: flex;
   flex-direction: column;
@@ -746,11 +762,11 @@ a:hover {
 }
 
 .site-footer a {
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--primary);
 }
 
 .site-footer a:hover {
-  color: #ffffff;
+  color: var(--primary-strong);
 }
 
 .footer-inner {
