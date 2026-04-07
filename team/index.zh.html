@@ -23,9 +23,16 @@ roles:
     {% if members.size > 0 %}
       <article class="card team-card{% if members.size < 3 %} compact{% endif %}">
         <h3>{{ role }}</h3>
-        <div class="chips">
+        <div class="member-grid">
           {% for person in members %}
-            <a href="{{ person.url | relative_url }}">{{ person.name }}</a>
+            <a class="member-link" href="{{ person.url | relative_url }}">
+              {% if person.image %}
+                <img class="member-avatar" src="{{ person.image | relative_url }}" alt="{{ person.name }} 的头像" />
+              {% else %}
+                <span class="member-avatar member-avatar-fallback">{{ person.name | slice: 0, 1 }}</span>
+              {% endif %}
+              <span class="member-name">{{ person.name }}</span>
+            </a>
           {% endfor %}
         </div>
       </article>
@@ -34,10 +41,18 @@ roles:
 
   <article class="card team-card">
     <h3>毕业生</h3>
-    <div class="chips">
+    <div class="member-grid">
       {% assign alumni = zh_people | where: "alumni", true | sort: "alumni_since" | reverse %}
       {% for person in alumni %}
-        <a href="{{ person.url | relative_url }}">{{ person.name }}（{{ person.alumni_since }}）</a>
+        <a class="member-link" href="{{ person.url | relative_url }}">
+          {% if person.image %}
+            <img class="member-avatar" src="{{ person.image | relative_url }}" alt="{{ person.name }} 的头像" />
+          {% else %}
+            <span class="member-avatar member-avatar-fallback">{{ person.name | slice: 0, 1 }}</span>
+          {% endif %}
+          <span class="member-name">{{ person.name }}</span>
+          <span class="member-meta">{{ person.alumni_since }}</span>
+        </a>
       {% endfor %}
     </div>
   </article>
