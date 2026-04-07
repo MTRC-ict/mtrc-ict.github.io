@@ -1,0 +1,19 @@
+---
+layout: person_profile
+name: 刘庆涛
+image: /assets/people/liuqingtao.jpg
+role: 硕士研究生
+blog: 
+email: qtliu@mail.ustc.edu.cn
+github: https://github.com/GooTal
+alumni: false
+advisors:
+    - 张福新
+date: 2022-09-01
+permalink: people/liuqingtao
+lang: zh
+---
+
+## 有什么话想说的
+
+热爱操作系统
