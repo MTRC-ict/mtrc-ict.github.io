@@ -1,0 +1,32 @@
+---
+layout: page
+lang: zh
+nav_key: updates
+title: 新闻
+eyebrow: News
+intro: 浏览中心新闻与公开动态。
+permalink: /news/
+description: MTRC 新闻列表页面。
+---
+
+{% assign zh_news = site.news | where: "lang", "zh" | sort: "date" | reverse %}
+
+<div class="content-stack">
+  {% for item in zh_news %}
+    <article class="card listing-card">
+      <div class="listing-header">
+        <div>
+          <p class="listing-kicker">{{ item.date | date: "%Y-%m-%d" }}</p>
+          <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+        </div>
+        {% if item.category %}
+          <span class="badge">{{ item.category }}</span>
+        {% endif %}
+      </div>
+      {% if item.summary %}
+        <p>{{ item.summary }}</p>
+      {% endif %}
+      <a class="listing-link" href="{{ item.url | relative_url }}">阅读全文</a>
+    </article>
+  {% endfor %}
+</div>

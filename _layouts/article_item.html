@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<section class="page-hero">
+  <div class="container page-hero-inner card">
+    <p class="eyebrow">{{ page.eyebrow | default: "Article" }}</p>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}
+      <p>{{ page.summary }}</p>
+    {% endif %}
+    <a class="back-link" href="{{ '/articles/' | relative_url }}">← 返回文章列表</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container content-stack">
+    <article class="card">
+      <dl class="meta-list">
+        {% if page.authors %}
+          <div>
+            <dt>作者</dt>
+            <dd>{{ page.authors | join: "、" }}</dd>
+          </div>
+        {% endif %}
+        {% if page.venue %}
+          <div>
+            <dt>发表</dt>
+            <dd>{{ page.venue }}</dd>
+          </div>
+        {% endif %}
+        {% if page.date %}
+          <div>
+            <dt>日期</dt>
+            <dd>{{ page.date | date: "%Y-%m-%d" }}</dd>
+          </div>
+        {% endif %}
+      </dl>
+    </article>
+
+    <article class="card rich-content profile-section">
+      {{ content }}
+    </article>
+  </div>
+</section>

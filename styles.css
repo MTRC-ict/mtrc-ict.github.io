@@ -356,6 +356,41 @@ a:hover {
   margin: 0 0 10px;
 }
 
+.hero-updates-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.hero-update-block {
+  padding: 18px;
+  border-radius: var(--radius-md);
+  background: rgba(233, 242, 253, 0.95);
+  border: 1px solid rgba(11, 86, 166, 0.08);
+}
+
+.hero-update-block .eyebrow {
+  margin-bottom: 10px;
+  color: var(--primary);
+  opacity: 1;
+}
+
+.hero-update-block .paper-title {
+  margin: 0 0 8px;
+}
+
+.hero-update-block .paper-authors {
+  margin: 0 0 8px;
+}
+
+.hero-update-block .paper-meta {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.hero-update-block .listing-link {
+  margin-top: 12px;
+}
+
 .hero-panel-footer ul,
 .feature-list,
 .update-list,
@@ -553,6 +588,33 @@ a:hover {
 
 .project-card a {
   margin-top: auto;
+  font-weight: 700;
+}
+
+.listing-card {
+  display: grid;
+  gap: 14px;
+}
+
+.listing-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.listing-kicker {
+  margin: 0 0 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.listing-link {
+  display: inline-flex;
+  align-items: center;
   font-weight: 700;
 }
 

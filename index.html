@@ -6,6 +6,8 @@ title: 微处理器研究中心（MTRC）
 description: 微处理器研究中心（MTRC）主页。
 ---
 
+{% assign zh_news = site.news | where: "lang", "zh" | sort: "date" | reverse %}
+{% assign zh_articles = site.articles | where: "lang", "zh" | sort: "date" | reverse %}
 <section class="hero-section">
   <div class="container hero-grid">
     <div class="hero-copy">
@@ -34,38 +36,36 @@ description: 微处理器研究中心（MTRC）主页。
         <span class="badge">Research Center</span>
         <span class="muted">ICT · CAS · Microprocessor Technology Research Center</span>
       </div>
-      <div class="stats-grid">
-        <article><strong>35</strong><span>成员个人页</span></article>
-        <article><strong>4</strong><span>研究方向专题页</span></article>
-        <article><strong>6</strong><span>站点主导航页</span></article>
-        <article><strong>1</strong><span>统一布局体系</span></article>
-      </div>
       <div class="hero-panel-footer">
-        <h3>中心概览</h3>
-        <ul>
-          <li>研究主题涵盖处理器设计、软硬件协同优化与系统软件。</li>
-          <li>站点集中展示中心概况、研究方向、团队成员与开放项目。</li>
-          <li>保留龙芯实验室原有成员与研究信息，并统一纳入中心主页展示。</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+        <h3>动态内容</h3>
+        <div class="hero-updates-stack">
+          <article class="hero-update-block">
+            <p class="eyebrow">Latest News</p>
+            <ul class="update-list">
+              {% for item in zh_news limit: 2 %}
+                <li>
+                  <span><a href="{{ item.url | relative_url }}">{{ item.title }}</a></span>
+                  <time>{{ item.date | date: "%Y-%m" }}</time>
+                </li>
+              {% endfor %}
+            </ul>
+            <a class="listing-link" href="{{ '/news/' | relative_url }}">查看全部新闻</a>
+          </article>
 
-<section class="section quick-nav-section">
-  <div class="container">
-    <div class="section-heading">
-      <p class="eyebrow">Sub Pages</p>
-      <h2>子界面导航</h2>
-      <p>通过以下页面可以分别浏览中心概况、研究方向、团队成员、项目与联系信息。</p>
-    </div>
-    <div class="projects-grid quick-links-grid">
-      <article class="card project-card"><h3>中心概况页</h3><p>查看机构定位、代表性成果与发展脉络。</p><a href="{{ '/about/' | relative_url }}">进入页面</a></article>
-      <article class="card project-card"><h3>研究方向页</h3><p>查看 MTRC 主线研究与原龙芯实验室四个方向。</p><a href="{{ '/research/' | relative_url }}">进入页面</a></article>
-      <article class="card project-card"><h3>团队成员页</h3><p>按角色分类浏览成员，并进入个人页。</p><a href="{{ '/team/' | relative_url }}">进入页面</a></article>
-      <article class="card project-card"><h3>开放项目页</h3><p>浏览 GitHub 组织与代表性项目。</p><a href="{{ '/projects/' | relative_url }}">进入页面</a></article>
-      <article class="card project-card"><h3>动态内容页</h3><p>浏览新闻、课程和近期文章摘要。</p><a href="{{ '/updates/' | relative_url }}">进入页面</a></article>
-      <article class="card project-card"><h3>联系页</h3><p>查看地址、机构信息与外部链接。</p><a href="{{ '/contact/' | relative_url }}">进入页面</a></article>
+          <article class="hero-update-block">
+            <p class="eyebrow">Recent Articles</p>
+            <ul class="update-list">
+              {% for item in zh_articles limit: 2 %}
+                <li>
+                  <span><a href="{{ item.url | relative_url }}">{{ item.title }}</a></span>
+                  <time>{{ item.venue }}</time>
+                </li>
+              {% endfor %}
+            </ul>
+            <a class="listing-link" href="{{ '/articles/' | relative_url }}">查看全部文章</a>
+          </article>
+        </div>
+      </div>
     </div>
   </div>
 </section>

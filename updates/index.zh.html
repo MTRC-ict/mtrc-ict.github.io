@@ -9,13 +9,18 @@ permalink: /updates/
 description: MTRC 动态内容页面。
 ---
 
+{% assign zh_news = site.news | where: "lang", "zh" | sort: "date" | reverse %}
+{% assign zh_articles = site.articles | where: "lang", "zh" | sort: "date" | reverse %}
+
 <div class="updates-grid">
   <article class="card updates-card">
     <h3>新闻</h3>
     <ul class="update-list">
-      <li><span>《计算机系统结构基础》开放下载</span><time>2023-06</time></li>
-      <li><span>欢迎来到龙芯实验室</span><time>2023-06</time></li>
+      {% for item in zh_news limit:3 %}
+        <li><span><a href="{{ item.url | relative_url }}">{{ item.title }}</a></span><time>{{ item.date | date: "%Y-%m" }}</time></li>
+      {% endfor %}
     </ul>
+    <a class="listing-link" href="{{ '/news/' | relative_url }}">查看全部新闻</a>
   </article>
 
   <article class="card updates-card">
@@ -27,9 +32,16 @@ description: MTRC 动态内容页面。
 
   <article class="card updates-card featured-paper">
     <h3>近期文章</h3>
-    <p class="paper-title">Zeno: An Interactive Framework for Behavioral Evaluation of Machine Learning</p>
-    <p class="paper-authors">Ángel Alexander Cabrera, Erica Fu, Donald Bertucci, Kenneth Holstein, Ameet Talwalkar, Jason I. Hong, Adam Perer, 赵东儒</p>
-    <p class="paper-meta">CHI 2023</p>
+    {% assign featured_article = zh_articles | first %}
+    {% if featured_article %}
+      <p class="paper-title"><a href="{{ featured_article.url | relative_url }}">{{ featured_article.title }}</a></p>
+      <p class="paper-authors">{{ featured_article.authors | join: ", " }}</p>
+      <p class="paper-meta">{{ featured_article.venue }}</p>
+      {% if featured_article.summary %}
+        <p>{{ featured_article.summary }}</p>
+      {% endif %}
+    {% endif %}
+    <a class="listing-link" href="{{ '/articles/' | relative_url }}">查看全部文章</a>
   </article>
 
   <article class="card updates-card join-card">

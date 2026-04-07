@@ -12,6 +12,10 @@ collections:
     output: true
   research:
     output: true
+  news:
+    output: true
+  articles:
+    output: true
 
 defaults:
   - scope:
@@ -24,6 +28,16 @@ defaults:
       type: "research"
     values:
       nav_key: "research"
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      nav_key: "updates"
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      nav_key: "updates"
 
 languages: ["zh", "en"]
 default_lang: "zh"
