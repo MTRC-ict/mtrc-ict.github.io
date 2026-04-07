@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<section class="page-hero">
+  <div class="container page-hero-inner card">
+    <p class="eyebrow">Research Topic</p>
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.description }}</p>
+    <a class="back-link" href="{{ '/research/' | relative_url }}">← 返回研究方向页</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container content-stack">
+    <article class="card profile-section">
+      <h2>团队构成</h2>
+      <div class="meta-list">
+        {% if page.advisors and page.advisors.size > 0 %}
+          <div>
+            <dt>指导教师</dt>
+            <dd>
+              {% for advisor in page.advisors %}
+                {% assign person = site.people | where: "lang", page.lang | where: "name", advisor | first %}
+                {% if person %}
+                  <a href="{{ person.url | relative_url }}">{{ advisor }}</a>{% unless forloop.last %}、{% endunless %}
+                {% else %}
+                  {{ advisor }}{% unless forloop.last %}、{% endunless %}
+                {% endif %}
+              {% endfor %}
+            </dd>
+          </div>
+        {% endif %}
+        {% if page.maintainers and page.maintainers.size > 0 %}
+          <div>
+            <dt>负责人</dt>
+            <dd>
+              {% for maintainer in page.maintainers %}
+                {% assign person = site.people | where: "lang", page.lang | where: "name", maintainer | first %}
+                {% if person %}
+                  <a href="{{ person.url | relative_url }}">{{ maintainer }}</a>{% unless forloop.last %}、{% endunless %}
+                {% else %}
+                  {{ maintainer }}{% unless forloop.last %}、{% endunless %}
+                {% endif %}
+              {% endfor %}
+            </dd>
+          </div>
+        {% endif %}
+        {% if page.contributors and page.contributors.size > 0 %}
+          <div>
+            <dt>参与人</dt>
+            <dd>
+              {% for contributor in page.contributors %}
+                {% assign person = site.people | where: "lang", page.lang | where: "name", contributor | first %}
+                {% if person %}
+                  <a href="{{ person.url | relative_url }}">{{ contributor }}</a>{% unless forloop.last %}、{% endunless %}
+                {% else %}
+                  {{ contributor }}{% unless forloop.last %}、{% endunless %}
+                {% endif %}
+              {% endfor %}
+            </dd>
+          </div>
+        {% endif %}
+      </div>
+    </article>
+
+    <article class="card rich-content profile-section">
+      <h2>方向说明</h2>
+      {{ content }}
+    </article>
+  </div>
+</section>
+

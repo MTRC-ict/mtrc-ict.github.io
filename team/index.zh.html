@@ -1,0 +1,45 @@
+---
+layout: page
+lang: zh
+nav_key: team
+title: 团队成员
+eyebrow: People
+intro: 团队成员页已经迁回原站的 `_people` collection；点击姓名即可进入对应个人页。
+permalink: /team/
+description: MTRC 团队成员页面。
+roles:
+  - 研究员（正高级工程师）
+  - 博士研究生
+  - 硕士研究生
+  - 员工
+  - 博士后
+---
+
+{% assign zh_people = site.people | where: "lang", "zh" %}
+
+<div class="team-grid">
+  {% for role in page.roles %}
+    {% assign members = zh_people | where: "role", role | where: "alumni", false %}
+    {% if members.size > 0 %}
+      <article class="card team-card{% if members.size < 3 %} compact{% endif %}">
+        <h3>{{ role }}</h3>
+        <div class="chips">
+          {% for person in members %}
+            <a href="{{ person.url | relative_url }}">{{ person.name }}</a>
+          {% endfor %}
+        </div>
+      </article>
+    {% endif %}
+  {% endfor %}
+
+  <article class="card team-card">
+    <h3>毕业生</h3>
+    <div class="chips">
+      {% assign alumni = zh_people | where: "alumni", true | sort: "alumni_since" | reverse %}
+      {% for person in alumni %}
+        <a href="{{ person.url | relative_url }}">{{ person.name }}（{{ person.alumni_since }}）</a>
+      {% endfor %}
+    </div>
+  </article>
+</div>
+

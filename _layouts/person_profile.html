@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+{% assign valid_email = true %}
+{% if page.email == nil or page.email == '' or page.email == 'example@example.com' %}
+  {% assign valid_email = false %}
+{% endif %}
+{% assign valid_blog = true %}
+{% if page.blog == nil or page.blog == '' or page.blog == '404' or page.blog == 'https://www.baidu.com' or page.blog == 'http://www.baidu.com' %}
+  {% assign valid_blog = false %}
+{% endif %}
+{% assign valid_github = true %}
+{% if page.github == nil or page.github == '' or page.github == 'https://www.baidu.com' or page.github == 'http://www.baidu.com' %}
+  {% assign valid_github = false %}
+{% endif %}
+{% if valid_github and page.github contains '://' %}
+  {% assign github_url = page.github %}
+{% elsif valid_github %}
+  {% assign github_url = 'https://github.com/' | append: page.github %}
+{% endif %}
+
+<section class="page-hero">
+  <div class="container page-hero-inner card">
+    <p class="eyebrow">Member Profile</p>
+    <h1>{{ page.name }}</h1>
+    <p>{{ page.role }}{% if page.alumni %} · 毕业生（{{ page.alumni_since }}）{% endif %}</p>
+    <a class="back-link" href="{{ '/team/' | relative_url }}">← 返回团队成员页</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container profile-grid">
+    <aside class="card profile-sidebar">
+      {% if page.image %}
+        <img class="profile-photo" src="{{ page.image | relative_url }}" alt="{{ page.name }} 的照片" />
+      {% else %}
+        <img class="profile-photo" src="{{ '/assets/person.png' | relative_url }}" alt="{{ page.name }} 的默认头像" />
+      {% endif %}
+      <div class="profile-sidebar-copy">
+        <p class="eyebrow">Profile</p>
+        <h2 class="profile-name">{{ page.name }}</h2>
+        <p class="profile-role">{{ page.role }}</p>
+        <div class="profile-kv">
+          {% if page.advisors and page.advisors.size > 0 %}
+            <p><strong>导师：</strong>{{ page.advisors | join: '、' }}</p>
+          {% endif %}
+          <p>
+            <strong>邮箱：</strong>
+            {% if valid_email %}
+              <a href="mailto:{{ page.email }}">{{ page.email }}</a>
+            {% else %}
+              <span class="profile-empty">原主页未提供有效邮箱</span>
+            {% endif %}
+          </p>
+          {% if valid_blog %}
+            <p><strong>个人主页：</strong><a href="{{ page.blog }}" target="_blank" rel="noreferrer">{{ page.blog }}</a></p>
+          {% endif %}
+          {% if valid_github %}
+            <p><strong>GitHub：</strong><a href="{{ github_url }}" target="_blank" rel="noreferrer">{{ github_url }}</a></p>
+          {% endif %}
+          <p><strong>原站链接：</strong><a href="{{ 'https://loongsonlab.github.io/' | append: page.permalink }}" target="_blank" rel="noreferrer">查看原页面</a></p>
+        </div>
+      </div>
+    </aside>
+
+    <div class="content-stack">
+      <article class="card profile-section rich-content">
+        <h2>研究方向与个人信息</h2>
+        {{ content }}
+      </article>
+
+      <article class="card note-card">
+        <h2>说明</h2>
+        <p>本页由原龙芯实验室 `_people` collection 页面渲染生成，已接入当前 MTRC 蓝色视觉布局。若原页中的邮箱、博客或 GitHub 为占位值，当前版本不会将其当作真实联系方式展示。</p>
+      </article>
+    </div>
+  </div>
+</section>

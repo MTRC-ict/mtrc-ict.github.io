@@ -1,0 +1,71 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Configure Pages URL
+        run: |
+          OWNER_NAME="${GITHUB_REPOSITORY%/*}"
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          OWNER_SLUG="$(printf '%s' "${OWNER_NAME}" | tr '[:upper:]' '[:lower:]')"
+          REPO_SLUG="$(printf '%s' "${REPO_NAME}" | tr '[:upper:]' '[:lower:]')"
+          SITE_URL="https://${OWNER_SLUG}.github.io"
+          BASEURL=""
+
+          if [ "${REPO_SLUG}" != "${OWNER_SLUG}.github.io" ]; then
+            BASEURL="/${REPO_NAME}"
+          fi
+
+          cat > _config.pages.yml <<EOF
+          url: "${SITE_URL}"
+          baseurl: "${BASEURL}"
+          EOF
+
+          echo "Publishing to ${SITE_URL}${BASEURL}"
+
+      - name: Build site
+        run: bundle exec jekyll build --config _config.yml,_config.pages.yml
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

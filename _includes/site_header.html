@@ -1,0 +1,25 @@
+{% assign current_nav = page.nav_key | default: "home" %}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="返回主页">
+      <span class="brand-mark">M</span>
+      <span class="brand-copy">
+        <strong>微处理器研究中心</strong>
+        <small>Microprocessor Technology Research Center</small>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      <a{% if current_nav == "home" %} class="is-active"{% endif %} href="{{ '/' | relative_url }}">首页</a>
+      <a{% if current_nav == "overview" %} class="is-active"{% endif %} href="{{ '/about/' | relative_url }}">中心概况</a>
+      <a{% if current_nav == "research" %} class="is-active"{% endif %} href="{{ '/research/' | relative_url }}">研究方向</a>
+      <a{% if current_nav == "team" %} class="is-active"{% endif %} href="{{ '/team/' | relative_url }}">团队成员</a>
+      <a{% if current_nav == "projects" %} class="is-active"{% endif %} href="{{ '/projects/' | relative_url }}">开放项目</a>
+      <a{% if current_nav == "updates" %} class="is-active"{% endif %} href="{{ '/updates/' | relative_url }}">动态内容</a>
+      <a{% if current_nav == "contact" %} class="is-active"{% endif %} href="{{ '/contact/' | relative_url }}">联系</a>
+    </nav>
+  </div>
+</header>
+

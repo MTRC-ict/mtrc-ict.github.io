@@ -1,0 +1,69 @@
+title: 微处理器研究中心（MTRC）
+description: >-
+  中国科学院计算技术研究所微处理器研究中心（MTRC）本地测试版主页。
+  该版本已迁移到原龙芯实验室所使用的 Jekyll 框架结构中，并保留当前 ICT 蓝色系视觉风格。
+email: jw@ict.ac.cn
+baseurl: ""
+url: ""
+timezone: Asia/Shanghai
+
+collections:
+  people:
+    output: true
+  research:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "people"
+    values:
+      nav_key: "team"
+  - scope:
+      path: ""
+      type: "research"
+    values:
+      nav_key: "research"
+
+languages: ["zh", "en"]
+default_lang: "zh"
+exclude_from_localization:
+  - assets
+  - styles.css
+  - script.js
+parallel_localization: true
+lang_from_path: true
+
+markdown: kramdown
+plugins:
+  - jekyll-polyglot
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - tools
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - .bundle
+  - .github
+  - .gitignore
+  - node_modules
+  - vendor
+  - .jekyll-cache
+  - .sass-cache
+  - _people/README.md
+  - _people/creat.py
+  - _people/rep.py
+  - _people/name.txt
+  - _people/name_en.txt
+  - _people/name_zh.txt
+  - _research/README.md
+  - people
+  - index.zh.html
+  - overview.html
+  - research.html
+  - team.html
+  - projects.html
+  - updates.html
+  - contact.html

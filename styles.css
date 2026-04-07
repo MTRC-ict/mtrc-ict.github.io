@@ -628,6 +628,14 @@ a:hover {
   padding: 28px 0 48px;
 }
 
+.site-footer a {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.site-footer a:hover {
+  color: #ffffff;
+}
+
 .footer-inner {
   display: flex;
   justify-content: space-between;

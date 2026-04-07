@@ -1,0 +1,50 @@
+---
+layout: page
+lang: zh
+nav_key: research
+title: 研究方向
+eyebrow: Research
+intro: 展示 MTRC 主线研究以及原龙芯实验室保留的四个方向；四个方向专题页已接入 `_research` collection。
+permalink: /research/
+description: MTRC 研究方向页面。
+---
+
+<div class="pillars-grid">
+  <article class="card pillar-card"><span class="pillar-tag">Pillar 01</span><h3>高性能处理</h3><p>面向高性能处理器架构、IP/SoC 设计、验证与测试、性能分析与评估、微结构安全、低功耗处理器以及高速信号传输技术。</p></article>
+  <article class="card pillar-card"><span class="pillar-tag">Pillar 02</span><h3>软硬件协同优化</h3><p>聚焦二进制翻译、内核优化、编译优化、虚拟机与虚拟化技术，形成体系结构、系统软件与工具链协同演进能力。</p></article>
+  <article class="card pillar-card"><span class="pillar-tag">Pillar 03</span><h3>领域专用处理器与 IP</h3><p>面向特定应用处理器和应用加速器 IP 设计，支撑新型处理器探索与应用落地。</p></article>
+</div>
+
+<div class="section-subheading">
+  <h3>原龙芯实验室研究方向（保留）</h3>
+  <p>下面四个专题页由 collection 输出，今后补充内容时不需要再复制静态 HTML。</p>
+</div>
+
+<div class="research-grid">
+  {% assign research_pages = site.research | where: "lang", "zh" %}
+  {% assign ordered_urls = "/research/binarytranslation,/research/heterogeneous,/research/operatingsystem,/research/performance" | split: "," %}
+  {% for target_url in ordered_urls %}
+    {% assign item = research_pages | where: "url", target_url | first %}
+    {% if item %}
+      <article class="card research-card">
+        <div class="research-card-header">
+          <span class="badge">专题页</span>
+          <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+        </div>
+        <p>{{ item.description }}</p>
+        <dl class="meta-list">
+          {% if item.advisors and item.advisors.size > 0 %}
+            <div><dt>指导教师</dt><dd>{{ item.advisors | join: "、" }}</dd></div>
+          {% endif %}
+          {% if item.maintainers and item.maintainers.size > 0 %}
+            <div><dt>负责人</dt><dd>{{ item.maintainers | join: "、" }}</dd></div>
+          {% endif %}
+          {% if item.contributors and item.contributors.size > 0 %}
+            <div><dt>参与人</dt><dd>{{ item.contributors | join: "、" }}</dd></div>
+          {% endif %}
+        </dl>
+      </article>
+    {% endif %}
+  {% endfor %}
+</div>
+

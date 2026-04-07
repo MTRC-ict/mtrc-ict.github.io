@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'zh-CN' }}">
+  {% include head.html %}
+  <body>
+    <div class="page-shell">
+      {% include site_header.html %}
+      <main>
+        {{ content }}
+      </main>
+      {% include site_footer.html %}
+    </div>
+    <script src="{{ '/script.js' | relative_url }}"></script>
+  </body>
+</html>
+
