@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>研究方向 | 微处理器研究中心（MTRC）</title>
+    <meta name="description" content="MTRC 研究方向页面，展示官方研究主线与原龙芯实验室研究方向。" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="index.html" aria-label="返回主页"><span class="brand-mark">M</span><span class="brand-copy"><strong>微处理器研究中心</strong><small>Microprocessor Technology Research Center</small></span></a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+          <nav id="site-nav" class="site-nav">
+            <a href="index.html">首页</a>
+            <a href="overview.html">中心概况</a>
+            <a class="is-active" href="research.html">研究方向</a>
+            <a href="team.html">团队成员</a>
+            <a href="projects.html">开放项目</a>
+            <a href="updates.html">动态内容</a>
+            <a href="contact.html">联系</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <div class="container page-hero-inner card">
+            <p class="eyebrow">Research</p>
+            <h1>研究方向</h1>
+            <p>集中展示 MTRC 官方研究主线，以及原龙芯实验室保留的四个研究方向。</p>
+            <a class="back-link" href="index.html">← 返回首页</a>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container content-stack">
+            <div class="pillars-grid">
+              <article class="card pillar-card"><span class="pillar-tag">Pillar 01</span><h3>高性能处理</h3><p>面向高性能处理器架构、IP/SoC 设计、验证与测试、性能分析与评估、微结构安全、低功耗处理器以及高速信号传输技术。</p></article>
+              <article class="card pillar-card"><span class="pillar-tag">Pillar 02</span><h3>软硬件协同优化</h3><p>聚焦二进制翻译、内核优化、编译优化、虚拟机与虚拟化技术，形成体系结构、系统软件与工具链协同演进能力。</p></article>
+              <article class="card pillar-card"><span class="pillar-tag">Pillar 03</span><h3>领域专用处理器与 IP</h3><p>面向特定应用处理器和应用加速器 IP 设计，支撑新型处理器探索与应用落地。</p></article>
+            </div>
+
+            <div class="section-subheading"><h3>原龙芯实验室研究方向（保留）</h3><p>原站点中的四个方向仍然作为中心内容的一部分继续展示。</p></div>
+
+            <div class="research-grid">
+              <article class="card research-card">
+                <div class="research-card-header"><span class="badge">方向一</span><h3>二进制翻译组</h3></div>
+                <p>通过二进制翻译，将 X86、ARM、RISC-V 等架构的应用程序运行在龙芯处理器上；结合指令集和处理器设计的硬件创新，实现动静态结合、软硬件结合的高效二进制翻译系统。</p>
+                <ul class="tag-list"><li>二进制翻译优化</li><li>库包装</li><li>系统态二进制翻译</li><li>COGBT / LLVM</li></ul>
+                <dl class="meta-list"><div><dt>指导教师</dt><dd>张福新</dd></div><div><dt>负责人</dt><dd>牛根、谢本壹、李欣宇、兰彦志</dd></div><div><dt>参与人</dt><dd>赵东儒、郭伟明、张壮壮、杨兆鑫、王靓璞</dd></div></dl>
+              </article>
+              <article class="card research-card">
+                <div class="research-card-header"><span class="badge">方向二</span><h3>新型体系结构</h3></div>
+                <p>面向工艺墙、能耗墙与指令墙等挑战，开展异构融合计算、多核推测并行、多态指令架构等创新微结构技术研究，以探索下一代通用处理器的发展路径。</p>
+                <ul class="tag-list"><li>异构融合计算</li><li>硬件线程级推测并行</li><li>创新微结构</li><li>多态指令架构</li></ul>
+                <dl class="meta-list"><div><dt>指导教师</dt><dd>王剑</dd></div><div><dt>负责人</dt><dd>李文青、程鑫</dd></div><div><dt>参与人</dt><dd>李文晋、燕澄皓、晏悦、叶锦鹏</dd></div></dl>
+              </article>
+              <article class="card research-card">
+                <div class="research-card-header"><span class="badge">方向三</span><h3>新型操作系统组</h3></div>
+                <p>该方向名称与入口按原站点保留。当前版本先延续原主页中的展示方式，后续如需补齐专题页内容，可继续从原站点仓库中接入对应页面。</p>
+                <ul class="tag-list"><li>操作系统</li><li>系统软件</li><li>LoongArch</li><li>后续可扩展专题页</li></ul>
+                <dl class="meta-list"><div><dt>状态</dt><dd>首页入口保留</dd></div><div><dt>目的</dt><dd>保证原站信息结构不变</dd></div><div><dt>备注</dt><dd>适合在下一阶段补齐详细内容</dd></div></dl>
+              </article>
+              <article class="card research-card">
+                <div class="research-card-header"><span class="badge">方向四</span><h3>性能分析组</h3></div>
+                <p>在龙芯自研芯片产品以及 x86、ARM 架构芯片产品上进行多角度、多维度性能测试，对比计算、访存、功耗等差异，从指令集、微架构和操作系统多个层次分析瓶颈并提出优化方法。</p>
+                <ul class="tag-list"><li>硅前性能分析</li><li>系统性分析方法</li><li>Benchmark 研究</li><li>性能瓶颈优化</li></ul>
+                <dl class="meta-list"><div><dt>指导教师</dt><dd>肖俊华</dd></div><div><dt>负责人</dt><dd>吴钰轩</dd></div><div><dt>参与人</dt><dd>程轶涵</dd></div></dl>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer"><div class="container footer-inner"><div><strong>微处理器研究中心（MTRC）</strong><p>研究方向子页面</p></div><div class="footer-note"><p>保留原龙芯实验室研究方向信息。</p></div></div></footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

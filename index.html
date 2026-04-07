@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>微处理器研究中心（MTRC） | Institute of Computing Technology, CAS</title>
+    <meta
+      name="description"
+      content="中国科学院计算技术研究所微处理器研究中心（MTRC）本地测试版主页。保留原龙芯实验室的人员与主要内容展示，并以ICT蓝色系完成视觉重构。"
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="index.html" aria-label="返回主页">
+            <span class="brand-mark">M</span>
+            <span class="brand-copy">
+              <strong>微处理器研究中心</strong>
+              <small>Microprocessor Technology Research Center</small>
+            </span>
+          </a>
+          <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+            <span></span><span></span><span></span>
+          </button>
+          <nav id="site-nav" class="site-nav">
+            <a class="is-active" href="index.html">首页</a>
+            <a href="overview.html">中心概况</a>
+            <a href="research.html">研究方向</a>
+            <a href="team.html">团队成员</a>
+            <a href="projects.html">开放项目</a>
+            <a href="updates.html">动态内容</a>
+            <a href="contact.html">联系</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section">
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">ICT · CAS / Microprocessor Division</p>
+              <h1>微处理器研究中心（MTRC）</h1>
+              <p class="hero-subtitle">
+                由原“龙芯实验室”主页内容重构而来，保留原有人员与主要内容展示，统一切换为
+                <strong>ICT 蓝色系</strong> 视觉风格，用于本地部署测试。
+              </p>
+              <p class="hero-description">
+                微处理器研究中心源自龙芯课题组，主要从事龙芯系列高性能通用 CPU、SoC
+                及相关技术研究；同时承接原龙芯实验室关于性能分析、设计优化、互连及安全机制、新型处理器等前瞻方向的展示内容。
+              </p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="overview.html">查看中心概况</a>
+                <a class="button button-secondary" href="https://github.com/LoongsonLab" target="_blank" rel="noreferrer">访问 GitHub 组织</a>
+              </div>
+              <ul class="hero-links">
+                <li><a href="https://english.ict.cas.cn/rese/divi/micro/202302/t20230209_326869.html" target="_blank" rel="noreferrer">ICT 英文站 MTRC 页面</a></li>
+                <li><a href="https://loongsonlab.github.io/" target="_blank" rel="noreferrer">原龙芯实验室主页</a></li>
+                <li><a href="https://github.com/LoongsonLab" target="_blank" rel="noreferrer">LoongsonLab GitHub</a></li>
+              </ul>
+            </div>
+
+            <div class="hero-panel card glass-card">
+              <div class="hero-panel-header">
+                <span class="badge">官方概况</span>
+                <span class="muted">基于 ICT / CAS 页面整理</span>
+              </div>
+              <div class="stats-grid">
+                <article>
+                  <strong>13</strong>
+                  <span>正式科研人员</span>
+                </article>
+                <article>
+                  <strong>63</strong>
+                  <span>研究生</span>
+                </article>
+                <article>
+                  <strong>3</strong>
+                  <span>核心研究主线</span>
+                </article>
+                <article>
+                  <strong>4</strong>
+                  <span>原站研究方向</span>
+                </article>
+              </div>
+              <div class="hero-panel-footer">
+                <h3>研究主线</h3>
+                <ul>
+                  <li>高性能处理：处理器架构、IP 与 SoC 设计、验证测试、性能分析与安全、低功耗与高速互连。</li>
+                  <li>软硬件基础协同优化：二进制翻译、内核优化、编译优化、虚拟机与虚拟化。</li>
+                  <li>领域专用处理器与 IP：面向特定应用的处理器与加速器 IP 设计。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section quick-nav-section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">Sub Pages</p>
+              <h2>子界面导航</h2>
+              <p>导航栏已切换为独立子界面入口，首页内容仍完整保留；也可以从下面卡片快速进入对应页面。</p>
+            </div>
+            <div class="projects-grid quick-links-grid">
+              <article class="card project-card">
+                <h3>中心概况页</h3>
+                <p>查看 MTRC 的机构定位、成果时间线与重构原则。</p>
+                <a href="overview.html">进入页面</a>
+              </article>
+              <article class="card project-card">
+                <h3>研究方向页</h3>
+                <p>集中展示 MTRC 主线研究与原龙芯实验室四个方向。</p>
+                <a href="research.html">进入页面</a>
+              </article>
+              <article class="card project-card">
+                <h3>团队成员页</h3>
+                <p>保留原团队分组和姓名信息，单独页面更便于查阅。</p>
+                <a href="team.html">进入页面</a>
+              </article>
+              <article class="card project-card">
+                <h3>开放项目页</h3>
+                <p>展示 GitHub 组织与开源项目入口。</p>
+                <a href="projects.html">进入页面</a>
+              </article>
+              <article class="card project-card">
+                <h3>动态内容页</h3>
+                <p>单独浏览新闻、课程与文章内容。</p>
+                <a href="updates.html">进入页面</a>
+              </article>
+              <article class="card project-card">
+                <h3>联系页</h3>
+                <p>查看地址、机构信息与外部链接。</p>
+                <a href="contact.html">进入页面</a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">Center Overview</p>
+              <h2>中心概况</h2>
+              <p>
+                本页面将原龙芯实验室主页中的团队、研究方向、动态内容与联系信息保留，并以“微处理器研究中心（MTRC）”为统一品牌入口进行重新组织。
+              </p>
+            </div>
+
+            <div class="about-grid">
+              <article class="card">
+                <h3>中心定位</h3>
+                <p>
+                  微处理器研究中心（MTRC）源自龙芯课题组，主要从事龙芯系列高性能通用 CPU 芯片、SoC 及相关技术研究。
+                  在此基础上，本地测试版主页沿用了原龙芯实验室关于前瞻研究平台的介绍方式，兼顾“中心门户”和“实验室内容展示”两类需求。
+                </p>
+                <p>
+                  原龙芯实验室被描述为龙芯中科技术股份有限公司的前瞻研究部门，同时也是中国科学院计算技术研究所微处理器研究中心与龙芯中科合作打造的科研创新平台。
+                </p>
+              </article>
+
+              <article class="card accent-card">
+                <h3>视觉与信息架构调整</h3>
+                <ul class="feature-list">
+                  <li>名称统一升级为 <strong>MTRC / 微处理器研究中心</strong></li>
+                  <li>保留原站人员分类、研究方向、新闻、课程、文章与联系信息</li>
+                  <li>整体配色切换为 ICT 蓝色系，增强正式机构门户气质</li>
+                  <li>导航栏改为多页面跳转，但首页内容继续完整保留</li>
+                </ul>
+              </article>
+            </div>
+
+            <div class="timeline card">
+              <div class="timeline-header">
+                <h3>代表性成果时间线</h3>
+                <p>依据 ICT 官方 MTRC 页面整理</p>
+              </div>
+              <div class="timeline-grid">
+                <article>
+                  <span class="year">2002</span>
+                  <h4>Loongson-1</h4>
+                  <p>中国首款通用处理器。</p>
+                </article>
+                <article>
+                  <span class="year">2003</span>
+                  <h4>Loongson-2B</h4>
+                  <p>国内首款 64 位通用处理器。</p>
+                </article>
+                <article>
+                  <span class="year">2006</span>
+                  <h4>Loongson-2E</h4>
+                  <p>国内首款主频达到 1GHz 的处理器。</p>
+                </article>
+                <article>
+                  <span class="year">2009</span>
+                  <h4>Loongson-3A1000</h4>
+                  <p>国内首款多核通用处理器。</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="research" class="section section-alt">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">Research</p>
+              <h2>研究方向</h2>
+              <p>
+                下面同时展示 <strong>MTRC 官方研究主线</strong> 与 <strong>原龙芯实验室的四个研究方向</strong>，确保品牌更新但内容不丢失。
+              </p>
+            </div>
+
+            <div class="pillars-grid">
+              <article class="card pillar-card">
+                <span class="pillar-tag">Pillar 01</span>
+                <h3>高性能处理</h3>
+                <p>
+                  面向高性能处理器架构、IP/SoC 设计、验证与测试、性能分析与评估、微结构安全、低功耗处理器以及高速信号传输技术。
+                </p>
+              </article>
+              <article class="card pillar-card">
+                <span class="pillar-tag">Pillar 02</span>
+                <h3>软硬件协同优化</h3>
+                <p>
+                  聚焦二进制翻译、内核优化、编译优化、虚拟机与虚拟化技术，形成体系结构、系统软件与工具链协同演进能力。
+                </p>
+              </article>
+              <article class="card pillar-card">
+                <span class="pillar-tag">Pillar 03</span>
+                <h3>领域专用处理器与 IP</h3>
+                <p>
+                  面向特定应用处理器和应用加速器 IP 设计，支撑新型处理器探索与应用落地。
+                </p>
+              </article>
+            </div>
+
+            <div class="section-subheading">
+              <h3>原龙芯实验室研究方向（保留）</h3>
+              <p>原站点中的四个方向仍然作为中心内容的一部分继续展示。</p>
+            </div>
+
+            <div class="research-grid">
+              <article class="card research-card">
+                <div class="research-card-header">
+                  <span class="badge">方向一</span>
+                  <h3>二进制翻译组</h3>
+                </div>
+                <p>
+                  通过二进制翻译，将 X86、ARM、RISC-V 等架构的应用程序运行在龙芯处理器上；结合指令集和处理器设计的硬件创新，实现动静态结合、软硬件结合的高效二进制翻译系统。
+                </p>
+                <ul class="tag-list">
+                  <li>二进制翻译优化</li>
+                  <li>库包装</li>
+                  <li>系统态二进制翻译</li>
+                  <li>COGBT / LLVM</li>
+                </ul>
+                <dl class="meta-list">
+                  <div><dt>指导教师</dt><dd>张福新</dd></div>
+                  <div><dt>负责人</dt><dd>牛根、谢本壹、李欣宇、兰彦志</dd></div>
+                  <div><dt>参与人</dt><dd>赵东儒、郭伟明、张壮壮、杨兆鑫、王靓璞</dd></div>
+                </dl>
+              </article>
+
+              <article class="card research-card">
+                <div class="research-card-header">
+                  <span class="badge">方向二</span>
+                  <h3>新型体系结构</h3>
+                </div>
+                <p>
+                  面向工艺墙、能耗墙与指令墙等挑战，开展异构融合计算、多核推测并行、多态指令架构等创新微结构技术研究，以探索下一代通用处理器的发展路径。
+                </p>
+                <ul class="tag-list">
+                  <li>异构融合计算</li>
+                  <li>硬件线程级推测并行</li>
+                  <li>创新微结构</li>
+                  <li>多态指令架构</li>
+                </ul>
+                <dl class="meta-list">
+                  <div><dt>指导教师</dt><dd>王剑</dd></div>
+                  <div><dt>负责人</dt><dd>李文青、程鑫</dd></div>
+                  <div><dt>参与人</dt><dd>李文晋、燕澄皓、晏悦、叶锦鹏</dd></div>
+                </dl>
+              </article>
+
+              <article class="card research-card">
+                <div class="research-card-header">
+                  <span class="badge">方向三</span>
+                  <h3>新型操作系统组</h3>
+                </div>
+                <p>
+                  该方向名称与入口按原站点保留。作为本地测试版首页，当前先延续原主页中的展示方式，后续如需补齐专题页内容，可继续从原站点仓库中接入对应页面。
+                </p>
+                <ul class="tag-list">
+                  <li>操作系统</li>
+                  <li>系统软件</li>
+                  <li>LoongArch</li>
+                  <li>后续可扩展专题页</li>
+                </ul>
+                <dl class="meta-list">
+                  <div><dt>状态</dt><dd>首页入口保留</dd></div>
+                  <div><dt>目的</dt><dd>保证原站信息结构不变</dd></div>
+                  <div><dt>备注</dt><dd>适合在下一阶段补齐详细内容</dd></div>
+                </dl>
+              </article>
+
+              <article class="card research-card">
+                <div class="research-card-header">
+                  <span class="badge">方向四</span>
+                  <h3>性能分析组</h3>
+                </div>
+                <p>
+                  在龙芯自研芯片产品以及 x86、ARM 架构芯片产品上进行多角度、多维度性能测试，对比计算、访存、功耗等差异，从指令集、微架构和操作系统多个层次分析瓶颈并提出优化方法。
+                </p>
+                <ul class="tag-list">
+                  <li>硅前性能分析</li>
+                  <li>系统性分析方法</li>
+                  <li>Benchmark 研究</li>
+                  <li>性能瓶颈优化</li>
+                </ul>
+                <dl class="meta-list">
+                  <div><dt>指导教师</dt><dd>肖俊华</dd></div>
+                  <div><dt>负责人</dt><dd>吴钰轩</dd></div>
+                  <div><dt>参与人</dt><dd>程轶涵</dd></div>
+                </dl>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="team" class="section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">People</p>
+              <h2>团队成员</h2>
+              <p>以下人员列表按原龙芯实验室团队页保留；点击姓名可进入对应成员页。</p>
+            </div>
+
+            <div class="team-grid">
+              <article class="card team-card">
+                <h3>研究员（正高级工程师）</h3>
+                <div class="chips">
+                  <a href="people/wangjian.html">王剑</a>
+                  <a href="people/zhangfuxin.html">张福新</a>
+                </div>
+              </article>
+
+              <article class="card team-card">
+                <h3>博士研究生</h3>
+                <div class="chips">
+                  <a href="people/liwenjin.html">李文晋</a><a href="people/liwenqing.html">李文青</a><a href="people/lixinyu.html">李欣宇</a><a href="people/niugen.html">牛根</a>
+                  <a href="people/wangliangpu.html">王靓璞</a><a href="people/xiebenyi.html">谢本壹</a><a href="people/chengxin.html">程鑫</a><a href="people/lanyanzhi.html">兰彦志</a>
+                </div>
+              </article>
+
+              <article class="card team-card">
+                <h3>硕士研究生</h3>
+                <div class="chips">
+                  <a href="people/chengyihan.html">程轶涵</a><a href="people/chenyang.html">陈洋</a><a href="people/dengfan.html">邓帆</a><a href="people/guoweiming.html">郭伟明</a>
+                  <a href="people/jiangtao.html">姜涛</a><a href="people/liuqingtao.html">刘庆涛</a><a href="people/temp1.html">未命名</a><a href="people/temp2.html">未命名</a>
+                  <a href="people/temp4.html">未命名</a><a href="people/xuhuai.html">徐淮</a><a href="people/yanchenghao.html">燕澄皓</a><a href="people/yanyue.html">晏悦</a>
+                  <a href="people/yejinpeng.html">叶锦鹏</a><a href="people/youhaichao.html">游海超</a><a href="people/zhangzhuangzhuang.html">张壮壮</a><a href="people/zhaodongru.html">赵东儒</a>
+                  <a href="people/zhuqizheng.html">朱奇正</a><a href="people/yangzhaoxin.html">杨兆鑫</a><a href="people/wuyuxuan.html">吴钰轩</a>
+                </div>
+              </article>
+
+              <article class="card team-card compact">
+                <h3>员工</h3>
+                <div class="chips"><a href="people/wangyuji.html">王宇吉</a></div>
+              </article>
+
+              <article class="card team-card compact">
+                <h3>博士后</h3>
+                <div class="chips"><a href="people/zhangtingting.html">张婷婷</a></div>
+              </article>
+
+              <article class="card team-card">
+                <h3>毕业生</h3>
+                <div class="chips">
+                  <a href="people/huqi.html">胡起（2023）</a><a href="people/wangxin.html">王鑫（2023）</a><a href="people/huangshuqi.html">黄树琦（2023）</a><a href="people/chenxuehai.html">陈学海（2023）</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section section-alt">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">Open Source</p>
+              <h2>开放项目与 GitHub 组织</h2>
+              <p>
+                参考 LoongsonLab GitHub 组织首页，将部分已公开仓库整理为主页展示模块，体现原实验室的开源与工程化实践。
+              </p>
+            </div>
+
+            <div class="projects-grid">
+              <article class="card project-card">
+                <h3>loongsonlab.github.io</h3>
+                <p>原龙芯实验室主页仓库，当前重构页面可在此基础上进一步迁移到 GitHub Pages。</p>
+                <a href="https://github.com/LoongsonLab" target="_blank" rel="noreferrer">查看组织</a>
+              </article>
+              <article class="card project-card">
+                <h3>oscomp-documents</h3>
+                <p>LoongArch 常见文档资料及说明文档整理，用于学习与研究支撑。</p>
+                <a href="https://github.com/LoongsonLab" target="_blank" rel="noreferrer">查看组织</a>
+              </article>
+              <article class="card project-card">
+                <h3>qemu-loongarch-runenv</h3>
+                <p>LoongArch QEMU 运行环境及相关配置说明，适合虚拟化与系统研究场景。</p>
+                <a href="https://github.com/LoongsonLab" target="_blank" rel="noreferrer">查看组织</a>
+              </article>
+              <article class="card project-card">
+                <h3>StarryOS-LoongArch</h3>
+                <p>将 Starry OS 移植到 LoongArch64 平台，体现操作系统方向的工程探索。</p>
+                <a href="https://github.com/LoongsonLab" target="_blank" rel="noreferrer">查看组织</a>
+              </article>
+              <article class="card project-card">
+                <h3>LARS</h3>
+                <p>LoongArch 汇编程序运行模拟器，支持学习、编译、运行与调试等能力。</p>
+                <a href="https://github.com/LoongsonLab" target="_blank" rel="noreferrer">查看组织</a>
+              </article>
+              <article class="card project-card">
+                <h3>OS_kernel_with_loong64_doc</h3>
+                <p>围绕 LoongArch 架构与操作系统底层交互整理的文档项目。</p>
+                <a href="https://github.com/LoongsonLab" target="_blank" rel="noreferrer">查看组织</a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="updates" class="section">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">Updates</p>
+              <h2>动态内容</h2>
+              <p>以下新闻、课程和近期文章信息按原龙芯实验室首页保留展示。</p>
+            </div>
+
+            <div class="updates-grid">
+              <article class="card updates-card">
+                <h3>新闻</h3>
+                <ul class="update-list">
+                  <li>
+                    <span>《计算机系统结构基础》开放下载</span>
+                    <time>2023-06</time>
+                  </li>
+                  <li>
+                    <span>欢迎来到龙芯实验室</span>
+                    <time>2023-06</time>
+                  </li>
+                </ul>
+              </article>
+
+              <article class="card updates-card">
+                <h3>课程</h3>
+                <ul class="update-list">
+                  <li>
+                    <span>HCI for Product Managers</span>
+                    <time>Spring 2023</time>
+                  </li>
+                </ul>
+              </article>
+
+              <article class="card updates-card featured-paper">
+                <h3>近期文章</h3>
+                <p class="paper-title">Zeno: An Interactive Framework for Behavioral Evaluation of Machine Learning</p>
+                <p class="paper-authors">
+                  Ángel Alexander Cabrera, Erica Fu, Donald Bertucci, Kenneth Holstein,
+                  Ameet Talwalkar, Jason I. Hong, Adam Perer, 赵东儒
+                </p>
+                <p class="paper-meta">CHI 2023</p>
+              </article>
+
+              <article class="card updates-card join-card">
+                <h3>参与进来</h3>
+                <p>
+                  对我们的工作有兴趣，想参与我们的一些项目；亦或有自己的一些独到见解，希望与我们分享。欢迎大家报名参与进来。
+                </p>
+                <a class="button button-secondary" href="contact.html">联系中心</a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section section-alt">
+          <div class="container">
+            <div class="contact-card card">
+              <div>
+                <p class="eyebrow">Contact</p>
+                <h2>联系与地址</h2>
+                <p>
+                  来自北京的问候。以下联系信息按原龙芯实验室页面保留，并将中心名称统一展示为“微处理器研究中心（MTRC）”。
+                </p>
+              </div>
+
+              <div class="contact-grid">
+                <article>
+                  <h3>机构</h3>
+                  <p>中国科学院计算技术研究所</p>
+                  <p>微处理器研究中心（MTRC）</p>
+                  <p>原龙芯实验室内容入口</p>
+                </article>
+                <article>
+                  <h3>地址</h3>
+                  <p>北京市海淀区北清路 158 号</p>
+                  <p>Haidian District, Beijing</p>
+                </article>
+                <article>
+                  <h3>外部链接</h3>
+                  <p><a href="https://www.ict.ac.cn/" target="_blank" rel="noreferrer">中国科学院计算技术研究所</a></p>
+                  <p><a href="https://www.ucas.ac.cn/" target="_blank" rel="noreferrer">中国科学院大学</a></p>
+                  <p><a href="https://www.loongson.cn/" target="_blank" rel="noreferrer">龙芯中科技术股份有限公司</a></p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            <strong>微处理器研究中心（MTRC）</strong>
+            <p>ICT 蓝色系本地测试版主页 · 适用于静态部署与后续 GitHub Pages 迁移</p>
+          </div>
+          <div class="footer-note">
+            <p>内容参考：ICT 官方 MTRC 页面、LoongsonLab GitHub 组织、原龙芯实验室主页。</p>
+            <p>当前版本已支持首页 + 多个子页面的本地静态浏览。</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
