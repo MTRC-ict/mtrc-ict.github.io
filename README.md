@@ -1,15 +1,15 @@
 # MTRC 主页
 
-这是一个将原“龙芯实验室”主页重构为“微处理器研究中心（MTRC）”主页的站点工程。当前仓库已经收敛到可本地预览、可通过 GitHub Actions 发布到 GitHub Pages 的 Jekyll 版本；早期纯静态稿仅作为历史过渡文件保留。
+这是一个将原“龙芯实验室”主页整理为“微处理器研究中心（MTRC）”主页的站点工程。当前仓库使用 Jekyll 构建，并可通过 GitHub Actions 发布到 GitHub Pages。
 
 ## 当前实现
 
 - 保留原龙芯实验室主页中的主要人员与内容信息
 - 整体视觉改为 ICT 蓝色系
 - 首页内容完整保留
-- 导航栏已改为跳转到若干独立子页面
-- 成员页与研究方向页已迁移回原站使用的 Jekyll collection 结构
-- 当前风格保持为新版 ICT 蓝色系，不回退旧模板外观
+- 导航栏跳转到若干独立子页面
+- 成员页与研究方向页统一由 Jekyll collection 管理
+- 站点整体采用 ICT 蓝色系视觉风格
 - 已补齐 GitHub Pages 自动部署工作流
 
 ## 页面结构
@@ -76,15 +76,6 @@ https://mtrc-ict.github.io/
 1. `Settings -> Pages`
 2. `Source` 选择 `GitHub Actions`
 
-## 发布收敛说明
-
-为了避免把源工程文件误发布到 Pages，当前已经在 [_config.yml](/home/haooops/Documents/webpage/_config.yml) 中排除了以下内容：
-
-- 本地依赖和缓存目录，如 `.bundle/`、`vendor/`、`node_modules/`
-- 早期静态 HTML 入口文件
-- `_people/` 和 `_research/` 中仅用于整理数据的说明文件、脚本和文本清单
-- `Gemfile`、`Gemfile.lock`、`package.json` 等源工程文件
-
 ## 文件说明
 
 - `_layouts/`：Jekyll 布局模板
@@ -93,7 +84,6 @@ https://mtrc-ict.github.io/
 - `.github/workflows/pages.yml`：GitHub Pages 自动部署工作流
 - `styles.css`：ICT 蓝色系视觉样式
 - `script.js`：移动端导航交互
-- `tools/generate_people_pages.py`：早期静态成员页生成脚本，现可作为数据整理辅助工具
 - `assets/favicon.svg`：站点图标
 
 ## 后续可选工作
