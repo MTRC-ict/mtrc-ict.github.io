@@ -83,12 +83,12 @@ https://mtrc-ict.github.io
 成员页面统一放在 [\_people](_people) 下，按维护目录组织：
 
 - 员工：`_people/员工/<role>/<slug>/`
-- 学生：`_people/学生/<分类>/<年份>/<slug>/`
+- 学生：`_people/学生/<role>/<年份>/<slug>/`
 
 例如：
 
-- [wangjian](_people/员工/研究员（正高级工程师）/wangjian/index.zh.md)
-- [liwenjin](_people/学生/博士研究生/2023/liwenjin/index.zh.md)
+- [zhangfuxin](_people/员工/研究员（正高级工程师）/zhangfuxin/index.zh.md)
+- [haomiao](_people/学生/硕士研究生/2023/haomiao/index.zh.md)
 
 每个成员目录通常至少包含：
 
