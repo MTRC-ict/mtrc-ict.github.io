@@ -267,14 +267,14 @@ front matter 下方的 Markdown 正文就是成员页内容。常见需要人工
 
 当前站点里“近期文章/出版物”使用 [\_articles](_articles) 维护。
 
-每篇文章一个目录，例如：
+每篇文章按年份放在一个目录中，例如：
 
-- [zeno](_articles/zeno/index.zh.md)
+- [zeno](_articles/2023/zeno/index.zh.md)
 
 推荐目录结构：
 
 ```text
-_articles/<slug>/index.zh.md
+_articles/<year>/<slug>/index.zh.md
 ```
 
 示例 front matter：
@@ -301,7 +301,7 @@ permalink: /articles/paper-slug/
 - `venue`：会议、期刊或技术报告名称
 - `date`：发布日期或发表日期
 - `summary`：首页/列表页展示的摘要
-- `permalink`：文章详情页地址
+- `permalink`：文章详情页地址，建议保持稳定，不要因为目录调整而修改已有链接
 
 ### 出版物 PR 建议
 
@@ -340,7 +340,7 @@ permalink: /articles/paper-slug/
 
 只需要修改：
 
-- 在 `_articles/` 下新增一个目录和 `index.zh.md`
+- 在 `_articles/<年份>/` 下新增一个目录和 `index.zh.md`
 
 ### 4. 新增一条新闻
 

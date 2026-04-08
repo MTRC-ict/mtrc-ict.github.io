@@ -10,26 +10,34 @@ description: MTRC 文章列表页面。
 ---
 
 {% assign zh_articles = site.articles | where: "lang", "zh" | sort: "date" | reverse %}
+{% assign article_groups = zh_articles | group_by_exp: "item", "item.date | date: '%Y'" %}
 
 <div class="content-stack">
-  {% for item in zh_articles %}
-    <article class="card listing-card">
-      <div class="listing-header">
-        <div>
-          <p class="listing-kicker">{{ item.venue }}</p>
-          <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
-        </div>
-        {% if item.date %}
-          <span class="badge">{{ item.date | date: "%Y" }}</span>
-        {% endif %}
+  {% for year_group in article_groups %}
+    <section class="member-group">
+      <h3 class="member-group-title">{{ year_group.name }}</h3>
+      <div class="content-stack">
+        {% for item in year_group.items %}
+          <article class="card listing-card">
+            <div class="listing-header">
+              <div>
+                <p class="listing-kicker">{{ item.venue }}</p>
+                <h3><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h3>
+              </div>
+              {% if item.date %}
+                <span class="badge">{{ item.date | date: "%Y" }}</span>
+              {% endif %}
+            </div>
+            {% if item.authors %}
+              <p class="paper-authors">{{ item.authors | join: ", " }}</p>
+            {% endif %}
+            {% if item.summary %}
+              <p>{{ item.summary }}</p>
+            {% endif %}
+            <a class="listing-link" href="{{ item.url | relative_url }}">阅读全文</a>
+          </article>
+        {% endfor %}
       </div>
-      {% if item.authors %}
-        <p class="paper-authors">{{ item.authors | join: ", " }}</p>
-      {% endif %}
-      {% if item.summary %}
-        <p>{{ item.summary }}</p>
-      {% endif %}
-      <a class="listing-link" href="{{ item.url | relative_url }}">阅读全文</a>
-    </article>
+    </section>
   {% endfor %}
 </div>

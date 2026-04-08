@@ -1,6 +1,7 @@
 ---
 layout: person_profile
 name: 魏怡健
+image: /assets/people/weiyijian.jpg
 role: 博士研究生
 alumni: false
 advisors:
@@ -10,6 +11,6 @@ permalink: people/weiyijian
 lang: zh
 ---
 
-## 个人简介
+## 个人格言
 
-个人简介待更新。
+立志发表100000000篇CCF-A。
