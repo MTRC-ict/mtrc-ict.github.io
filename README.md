@@ -349,9 +349,6 @@ permalink: /articles/paper-slug/
 
 - 在 `_news/` 下新增一个目录和 `index.zh.md`
 
-## 后续工作
+## 特别感谢
 
-- 补充更多英文页面
-- 继续完善研究方向详情页内容
-- 统一整理成员页中的出版物格式
-- 仓库重命名为 `mtrc-ict.github.io` 后切换到根域名部署
+本页面基于原[龙芯实验室主页仓库](https://github.com/LoongsonLab/loongsonlab.github.io)与[龙芯实验室 github 组织](https://github.com/LoongsonLab)修改与整理，感谢主页原贡献者与 LoongsonLab 所有组织成员！
