@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 张福新
+author_aliases:
+  - Fuxin Zhang
 image: /assets/people/zhangfuxin.jpg
 role: 研究员/正高级工程师
 blog: http://people.ucas.edu.cn/~fxzhang

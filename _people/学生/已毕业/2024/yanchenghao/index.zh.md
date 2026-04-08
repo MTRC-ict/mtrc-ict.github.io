@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 燕澄皓
+author_aliases:
+  - Chenghao Yan
 image: /assets/people/yanchenghao.jpg
 role: 硕士研究生
 blog: https://www.baidu.com

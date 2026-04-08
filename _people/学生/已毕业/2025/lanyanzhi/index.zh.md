@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 兰彦志
+author_aliases:
+  - Yanzhi Lan
 image: /assets/people/lanyanzhi.jpg
 role: 博士研究生
 blog: 404

@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 郭伟明
+author_aliases:
+  - Weiming Guo
 image: /assets/people/guoweiming.jpg
 role: 硕士研究生
 blog: https://www.baidu.com

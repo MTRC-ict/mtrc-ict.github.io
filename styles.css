@@ -689,6 +689,85 @@ a:hover {
   font-weight: 700;
 }
 
+.article-index-main {
+  min-width: 0;
+}
+
+.article-year-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.article-list {
+  display: grid;
+  gap: 10px;
+}
+
+.article-list-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: var(--radius-lg);
+}
+
+.article-list-main {
+  min-width: 0;
+}
+
+.article-list-title,
+.article-list-meta {
+  margin: 0;
+}
+
+.article-list-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.article-list-title a {
+  color: var(--text);
+}
+
+.article-list-title a:hover {
+  color: var(--primary-strong);
+}
+
+.article-list-meta {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.article-list-venue {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.article-list-separator {
+  margin: 0 8px;
+  color: rgba(17, 69, 135, 0.28);
+}
+
+.article-list-side {
+  display: grid;
+  justify-items: end;
+  gap: 8px;
+  text-align: right;
+}
+
+.article-list-side time {
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
 .updates-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -866,6 +945,16 @@ a:hover {
 
   .stats-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .article-list-item {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .article-list-side {
+    justify-items: start;
+    text-align: left;
   }
 
   .footer-inner {
@@ -1077,6 +1166,34 @@ a:hover {
 
 .profile-empty {
   color: var(--text-muted);
+}
+
+.publication-list {
+  display: grid;
+  gap: 12px;
+}
+
+.publication-item {
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: rgba(238, 244, 252, 0.7);
+}
+
+.publication-title,
+.publication-meta {
+  margin: 0;
+}
+
+.publication-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.publication-meta {
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 0.94rem;
 }
 
 .rich-content h2 {

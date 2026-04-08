@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 李文青
+author_aliases:
+  - Wenqing Li
 image: /assets/people/liwenqing.jpg
 role: 博士研究生
 blog: https://www.baidu.com

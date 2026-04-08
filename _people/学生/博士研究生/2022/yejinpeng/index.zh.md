@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 叶锦鹏
+author_aliases:
+  - Jinpeng Ye
 image: /assets/people/yejinpeng.jpg
 role: 博士研究生
 blog: https://www.baidu.com

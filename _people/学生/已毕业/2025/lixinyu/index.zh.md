@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 李欣宇
+author_aliases:
+  - Xinyu Li
 image: /assets/people/lixinyu.jpg
 role: 博士研究生
 blog: https://www.baidu.com

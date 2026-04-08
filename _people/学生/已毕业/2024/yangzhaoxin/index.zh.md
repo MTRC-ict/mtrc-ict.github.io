@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 杨兆鑫
+author_aliases:
+  - Zhaoxin Yang
 image: /assets/people/yangzhaoxin.jpg
 role: 硕士研究生
 blog: https://ylzsx.github.io

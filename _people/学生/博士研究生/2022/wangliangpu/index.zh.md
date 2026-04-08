@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 王靓璞
+author_aliases:
+  - Liangpu Wang
 image: /assets/people/wangliangpu.jpg
 role: 博士研究生
 blog: https://www.baidu.com

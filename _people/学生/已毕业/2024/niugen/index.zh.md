@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 牛根
+author_aliases:
+  - Gen Niu
 image: /assets/people/niugen.jpg
 role: 博士研究生
 blog: https://www.baidu.com

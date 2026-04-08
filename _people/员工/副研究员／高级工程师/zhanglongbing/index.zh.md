@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 章隆兵
+author_aliases:
+  - Longbing Zhang
 image: /assets/people/zhanglongbing.jpg
 role: 副研究员/高级工程师
 blog: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496795.html

@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 晏悦
+author_aliases:
+  - Yue Yan
 image: /assets/people/yanyue.jpg
 role: 硕士研究生
 blog: https://jensen-yan.github.io/

@@ -20,6 +20,25 @@ layout: default
   {% assign github_url = 'https://github.com/' | append: page.github %}
 {% endif %}
 {% assign people_in_lang = site.people | where: "lang", page.lang %}
+{% assign person_articles = site.articles | where: "lang", page.lang | sort: "date" | reverse %}
+{% assign matched_article_count = 0 %}
+{% for article in person_articles %}
+  {% assign is_author = false %}
+  {% if article.authors contains page.name %}
+    {% assign is_author = true %}
+  {% endif %}
+  {% if is_author == false and page.author_aliases %}
+    {% for alias in page.author_aliases %}
+      {% if article.authors contains alias %}
+        {% assign is_author = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if is_author %}
+    {% assign matched_article_count = matched_article_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
 
 <section class="page-hero">
   <div class="container page-hero-inner card">
@@ -81,6 +100,69 @@ layout: default
         <h2>研究方向与个人信息</h2>
         {{ content }}
       </article>
+
+      {% if matched_article_count > 0 %}
+        <article class="card profile-section">
+          <h2>站内相关文章</h2>
+          {% assign current_article_year = '' %}
+          {% for article in person_articles %}
+            {% assign is_author = false %}
+            {% if article.authors contains page.name %}
+              {% assign is_author = true %}
+            {% endif %}
+            {% if is_author == false and page.author_aliases %}
+              {% for alias in page.author_aliases %}
+                {% if article.authors contains alias %}
+                  {% assign is_author = true %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+            {% if is_author %}
+              {% assign article_year = article.date | date: "%Y" %}
+              {% if article_year != current_article_year %}
+                {% assign current_article_year = article_year %}
+                <div class="member-group">
+                  <h3 class="member-group-title">{{ article_year }}</h3>
+                  <div class="publication-list">
+              {% endif %}
+                    <article class="publication-item">
+                      <p class="publication-title"><a href="{{ article.url | relative_url }}">{{ article.title }}</a></p>
+                      <p class="publication-meta">{{ article.venue_full | default: article.venue }}</p>
+                    </article>
+              {% assign next_index = forloop.index %}
+              {% assign found_next = false %}
+              {% for next_article in person_articles offset: next_index %}
+                {% assign next_is_author = false %}
+                {% if next_article.authors contains page.name %}
+                  {% assign next_is_author = true %}
+                {% endif %}
+                {% if next_is_author == false and page.author_aliases %}
+                  {% for alias in page.author_aliases %}
+                    {% if next_article.authors contains alias %}
+                      {% assign next_is_author = true %}
+                      {% break %}
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+                {% if next_is_author %}
+                  {% assign found_next = true %}
+                  {% assign next_article_year = next_article.date | date: "%Y" %}
+                  {% if next_article_year != current_article_year %}
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+              {% if found_next == false %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </article>
+      {% endif %}
     </div>
   </div>
 </section>

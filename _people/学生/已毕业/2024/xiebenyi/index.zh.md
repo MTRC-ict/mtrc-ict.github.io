@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 谢本壹
+author_aliases:
+  - Benyi Xie
 image: /assets/people/xiebenyi.jpg
 role: 博士研究生
 blog: https://www.baidu.com

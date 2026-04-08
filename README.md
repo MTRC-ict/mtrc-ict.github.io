@@ -269,7 +269,7 @@ front matter 下方的 Markdown 正文就是成员页内容。常见需要人工
 
 每篇文章按年份放在一个目录中，例如：
 
-- [zeno](_articles/2023/zeno/index.zh.md)
+- [btbench](_articles/2024/btbench/index.zh.md)
 
 推荐目录结构：
 
@@ -289,6 +289,7 @@ authors:
   - 作者A
   - 作者B
 venue: MICRO 2025
+venue_full: IEEE/ACM International Symposium on Microarchitecture 2025
 date: 2025-10-01
 permalink: /articles/paper-slug/
 ---
@@ -299,6 +300,7 @@ permalink: /articles/paper-slug/
 - `title`：论文或文章标题
 - `authors`：作者列表
 - `venue`：会议、期刊或技术报告名称
+- `venue_full`：文章详情页展示的会议/期刊全称；如果不填，则默认回退显示 `venue`
 - `date`：发布日期或发表日期
 - `summary`：首页/列表页展示的摘要
 - `permalink`：文章详情页地址，建议保持稳定，不要因为目录调整而修改已有链接

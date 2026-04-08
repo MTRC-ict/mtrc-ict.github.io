@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% assign people_in_lang = site.people | where: "lang", page.lang %}
+
 <section class="page-hero">
   <div class="container page-hero-inner card">
     <p class="eyebrow">{{ page.eyebrow | default: "Article" }}</p>
@@ -20,13 +22,33 @@ layout: default
         {% if page.authors %}
           <div>
             <dt>作者</dt>
-            <dd>{{ page.authors | join: "、" }}</dd>
+            <dd>
+              {% for author_name in page.authors %}
+                {% assign linked_person = nil %}
+                {% for person in people_in_lang %}
+                  {% if person.name == author_name %}
+                    {% assign linked_person = person %}
+                    {% break %}
+                  {% endif %}
+                  {% if person.author_aliases and person.author_aliases contains author_name %}
+                    {% assign linked_person = person %}
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+                {% if linked_person %}
+                  <a href="{{ linked_person.url | relative_url }}">{{ author_name }}</a>
+                {% else %}
+                  {{ author_name }}
+                {% endif %}
+                {% unless forloop.last %}、{% endunless %}
+              {% endfor %}
+            </dd>
           </div>
         {% endif %}
-        {% if page.venue %}
+        {% if page.venue or page.venue_full %}
           <div>
             <dt>发表</dt>
-            <dd>{{ page.venue }}</dd>
+            <dd>{{ page.venue_full | default: page.venue }}</dd>
           </div>
         {% endif %}
         {% if page.date %}

@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 赵东儒
+author_aliases:
+  - Dongru Zhao
 image: /assets/people/zhaodongru.jpg
 role: 硕士研究生
 email: zhaodongru@loongson.cn

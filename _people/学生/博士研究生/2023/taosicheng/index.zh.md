@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 陶思成
+author_aliases:
+  - Sicheng Tao
 image: /assets/people/taosicheng.jpg
 role: 博士研究生
 alumni: false

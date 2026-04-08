@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 胡伟武
+author_aliases:
+  - Weiwu Hu
 image: /assets/people/huweiwu.png
 role: 研究员/正高级工程师
 blog: https://www.ict.ac.cn/sourcedb/cn/jssrck/200909/t20090917_2496637.html

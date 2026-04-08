@@ -1,6 +1,9 @@
 ---
 layout: person_profile
 name: 张婷婷
+author_aliases:
+  - Tingting Zhang
+  - Zhang Tingting
 image: /assets/people/zhangtingting.jpg
 role: 博士后
 blog: https://www.baidu.com

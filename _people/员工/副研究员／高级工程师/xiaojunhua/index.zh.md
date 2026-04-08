@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 肖俊华
+author_aliases:
+  - Junhua Xiao
 image: /assets/people/xiaojunhua.jpg
 role: 副研究员/高级工程师
 blog: https://www.ict.ac.cn/sourcedb/cn/jssrck/201511/t20151119_4470340.html

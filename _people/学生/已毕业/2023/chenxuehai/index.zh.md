@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 陈学海
+author_aliases:
+  - Xuehai Chen
 image: /assets/people/chenxuehai.jpg
 role: 硕士研究生
 blog: https://www.baidu.com

@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 张壮壮
+author_aliases:
+  - Zhuangzhuang Zhang
 image: /assets/people/zhangzhuangzhuang.jpg
 role: 硕士研究生
 blog: https://www.baidu.com

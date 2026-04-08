@@ -1,6 +1,9 @@
 ---
 layout: person_profile
 name: 王剑
+author_aliases:
+  - Jian Wang
+  - Wang Jian
 image: /assets/people/wangjian.jpg
 role: 研究员/正高级工程师
 blog: http://www.ict.cas.cn/sourcedb_2018_ict_cas/cn/jssrck/200909/t20090917_2496730.html

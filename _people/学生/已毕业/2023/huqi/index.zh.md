@@ -1,6 +1,8 @@
 ---
 layout: person_profile
 name: 胡起
+author_aliases:
+  - Qi Hu
 image: /assets/people/huqi.jpg
 role: 硕士研究生
 blog: https://blog.spcsky.com
