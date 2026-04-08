@@ -19,8 +19,8 @@ layout: default
 {% elsif valid_github %}
   {% assign github_url = 'https://github.com/' | append: page.github %}
 {% endif %}
-{% assign people_in_lang = site.people | where: "lang", page.lang %}
-{% assign person_articles = site.articles | where: "lang", page.lang | sort: "date" | reverse %}
+{% assign people_in_lang = site.people | where: "lang", "zh" %}
+{% assign person_articles = site.articles | where: "lang", "zh" | sort: "date" | reverse %}
 {% assign matched_article_count = 0 %}
 {% for article in person_articles %}
   {% assign is_author = false %}

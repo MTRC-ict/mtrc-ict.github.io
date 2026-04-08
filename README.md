@@ -98,7 +98,6 @@ https://mtrc-ict.github.io
 每个成员目录通常至少包含：
 
 - `index.zh.md`
-- `index.en.md`
 
 照片统一放在：
 

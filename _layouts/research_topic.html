@@ -21,7 +21,7 @@ layout: default
             <dt>指导教师</dt>
             <dd>
               {% for advisor in page.advisors %}
-                {% assign person = site.people | where: "lang", page.lang | where: "name", advisor | first %}
+                {% assign person = site.people | where: "lang", "zh" | where: "name", advisor | first %}
                 {% if person %}
                   <a href="{{ person.url | relative_url }}">{{ advisor }}</a>{% unless forloop.last %}、{% endunless %}
                 {% else %}
@@ -36,7 +36,7 @@ layout: default
             <dt>负责人</dt>
             <dd>
               {% for maintainer in page.maintainers %}
-                {% assign person = site.people | where: "lang", page.lang | where: "name", maintainer | first %}
+                {% assign person = site.people | where: "lang", "zh" | where: "name", maintainer | first %}
                 {% if person %}
                   <a href="{{ person.url | relative_url }}">{{ maintainer }}</a>{% unless forloop.last %}、{% endunless %}
                 {% else %}
@@ -51,7 +51,7 @@ layout: default
             <dt>参与人</dt>
             <dd>
               {% for contributor in page.contributors %}
-                {% assign person = site.people | where: "lang", page.lang | where: "name", contributor | first %}
+                {% assign person = site.people | where: "lang", "zh" | where: "name", contributor | first %}
                 {% if person %}
                   <a href="{{ person.url | relative_url }}">{{ contributor }}</a>{% unless forloop.last %}、{% endunless %}
                 {% else %}
@@ -70,4 +70,3 @@ layout: default
     </article>
   </div>
 </section>
-

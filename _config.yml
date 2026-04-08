@@ -39,18 +39,8 @@ defaults:
     values:
       nav_key: "updates"
 
-languages: ["zh", "en"]
-default_lang: "zh"
-exclude_from_localization:
-  - assets
-  - styles.css
-  - script.js
-parallel_localization: true
-lang_from_path: true
-
 markdown: kramdown
 plugins:
-  - jekyll-polyglot
   - jekyll-sitemap
 
 exclude:
